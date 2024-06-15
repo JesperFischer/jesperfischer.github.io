@@ -5,13 +5,10 @@ pacman::p_load(
   ggplot2,
   haven,
   brms,
+  shinyWidgets,
+  shiny,
   tidyr,
   stringr,
-  Hmisc,
-  shinyApp,
-  modelsummary,
-  marginaleffects,
-  LaplacesDemon,
   extraDistr,
   ggh4x
 )
@@ -24,7 +21,7 @@ df = read.csv(here::here("_posts","myapp","raw_hrd.csv")) %>% filter(participant
 
 dd = prep_data(df)
 
-shinyApp(
+shiny::shinyApp(
   # Define UI
   ui <- navbarPage(
     "Parameters",
